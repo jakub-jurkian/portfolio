@@ -23,7 +23,7 @@ export default function Home() {
             I&apos;m Jakub Jurkian
           </h1>
           <h2 className="text-[1.125rem] md:text-[1.25rem] text-(--text-secondary) font-normal mb-8">
-            CS Student | Fullstack &amp; DevOps | .NET &amp; React
+            CS Student | Software Engineer | Java &amp; React
           </h2>
 
           <p className="text-(--text-secondary) text-base md:text-[1.125rem] leading-[1.6] md:leading-[1.7] max-w-full md:max-w-[480px] mb-10">

@@ -100,17 +100,17 @@ export default function AboutMe() {
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
               {[
-                "C# / .NET",
-                "TypeScript",
-                "React",
-                "Node / Express.js",
-                "Go",
-                "Python",
-                "Docker",
-                "Microsoft Azure",
-                "SQL Server",
+                "Java / Spring Boot",
                 "PostgreSQL",
                 "MongoDB",
+                "Docker",
+                "AI Tools",
+                "Node / Express.js",
+                "Python",
+                "TypeScript",
+                "React",
+                "Microsoft Azure",
+                "C# / .NET",
                 "Git",
               ].map((skill) => (
                 <div
