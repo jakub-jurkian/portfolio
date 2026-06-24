@@ -13,24 +13,22 @@ export default function Home() {
             placeholder="blur"
             className="w-[76px] h-[76px] rounded-full object-cover border-2 border-border-color transition-transform duration-300 hover:scale-105 hover:border-accent"
           />
-          <div className="bg-card px-4 py-2 rounded-2xl border border-border-color text-sm font-medium text-(--text-secondary) w-38 text-center">
-            <span className="inline-block animate-pulse mr-1">👋</span> Open to
-            work
+          <div className="bg-card px-4 py-2 rounded-2xl border border-border-color text-sm font-medium text-(--text-secondary) inline-flex items-center gap-1.5">
+            <span className="inline-block animate-pulse">👋</span> Open to work
           </div>
         </div>
         <div>
-          <h1 className="text-[clamp(2.5rem,5vw+1rem,4rem)] md:text-[2rem] xl:text-[3rem] leading-[1.1] mb-3 font-bold tracking-[-0.02em]">
+          <h1 className="text-[clamp(2.5rem,5vw+1rem,3.5rem)] lg:text-[4rem] leading-[1.05] mb-3 font-bold tracking-[-0.03em] text-balance">
             I&apos;m Jakub Jurkian
           </h1>
-          <h2 className="text-[1.125rem] md:text-[1.25rem] text-(--text-secondary) font-normal mb-8">
-            CS Student | Software Engineer | Java &amp; React
+          <h2 className="text-[1.125rem] md:text-[1.25rem] lg:text-[1.375rem] text-(--text-secondary) font-normal mb-8 leading-tight tracking-tight">
+            Java Backend Developer · Software Engineer · CS Student @ UG
           </h2>
 
-          <p className="text-(--text-secondary) text-base md:text-[1.125rem] leading-[1.6] md:leading-[1.7] max-w-full md:max-w-[480px] mb-10">
-            Focused on building fullstack applications and deploying them to
-            containerized cloud environments. Currently studying Computer
-            Science at the University of Gdańsk — seeking a Summer 2026
-            internship in Backend, DevOps, or Software Engineering.
+          <p className="text-(--text-secondary) text-[1.0625rem] md:text-[1.125rem] leading-[1.65] max-w-full md:max-w-[540px] mb-10 text-pretty">
+            Focused on building backend systems in Java. Currently studying
+            Computer Science at the University of Gdańsk – seeking an internship
+            or junior backend / software engineering role.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">

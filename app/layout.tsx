@@ -6,7 +6,10 @@ export const metadata: Metadata = {
   title: "Jakub Jurkian | Software Engineer",
 };
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -15,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.className}>
-      <body>{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

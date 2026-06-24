@@ -119,12 +119,12 @@ export default function Projects() {
               {/* Content Section */}
               <div className="p-6 flex flex-col grow">
                 <div className="flex justify-between items-start mb-4">
-                  <h2 className="text-2xl font-bold text-(--text-primary)">
+                  <h2 className="text-xl md:text-2xl font-bold tracking-tight text-balance text-(--text-primary)">
                     {project.title}
                   </h2>
                 </div>
 
-                <p className="text-(--text-secondary) leading-relaxed mb-6 grow">
+                <p className="text-[0.9375rem] md:text-base text-(--text-secondary) leading-[1.65] mb-6 grow text-pretty">
                   {project.description}
                 </p>
 
@@ -133,7 +133,7 @@ export default function Projects() {
                   {project.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs font-medium px-3 py-1 rounded-full bg-[#2a2a2a] text-(--text-secondary) border border-[#333]"
+                      className="text-xs font-medium tracking-wide px-3 py-1 rounded-full bg-[#2a2a2a] text-(--text-secondary) border border-[#333]"
                     >
                       {tech}
                     </span>
