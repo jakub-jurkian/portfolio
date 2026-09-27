@@ -112,12 +112,9 @@ export default function Home() {
       </nav>
 
       <footer className="col-span-full mt-8 md:mt-0 text-center md:text-left">
-        <a
-          href="mailto:kuba.jur03@gmail.com"
-          className="text-(--text-secondary) transition-colors duration-200 no-underline hover:text-accent"
-        >
-          kuba.jur03@gmail.com
-        </a>
+        <p className="text-(--text-secondary) transition-colors duration-200 no-underline hover:text-accent">
+          kuba.jur03 [at] gmail [dot] com
+        </p>
       </footer>
     </div>
   );
