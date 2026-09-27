@@ -1,31 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About Me",
+  description:
+    "Computer Science student at the University of Gdańsk focused on Java / Spring Boot backend engineering.",
+};
 
 const timelineEvents = [
   {
-    year: "2025 - Present",
-    title: "Contributor, University Programming Club (WIP)",
-    description:
-      "Technical contributor to the 'Work In Progress' club. Collaborating in an Agile team to build scalable backend architectures, participating in rigorous code reviews, and establishing robust Git workflows.",
-    tags: ["Backend Systems", "Git Workflow", "Code Review"],
-  },
-  {
     year: "2024 - Present",
-    title: "B.Sc. Computer Science - University of Gdańsk",
+    title: "B.Sc. Computer Science – University of Gdańsk",
     description:
-      "Specializing in Systems Programming (Golang) and Databases. Core coursework covers Algorithms & Data Structures, Operating Systems, Cloud Technologies, and Automated Testing. Designing concurrent backend systems and deploying containerized applications to cloud environments.",
-    tags: ["Systems Programming", "Databases & SQL", "Cloud Infrastructure"],
+      "Full-time, practical-profile programme: the 6th semester (from January 2027) is a 720-hour professional internship with no classes. Relevant coursework includes Algorithms & Data Structures, Industrial Applications (Spring Boot, ORM, REST API design), Databases (relational & NoSQL, polyglot persistence), Concurrent Programming, Web Application Security (OAuth2/Keycloak), and Microservices Architecture Patterns.",
   },
   {
     year: "2019 - 2023",
-    title: "IT Technician Diploma: Software Dev & Systems Administration",
+    title: "IT Technician Diploma – Maciej Rataj ZS (Reszel)",
     description:
-      "Completed a comprehensive four-year technical program. Solidified core computing roots: mastered Linux/Windows system administration, network management, and relational SQL database design alongside fundamental web development.",
-    tags: [
-      "Computing Fundamentals",
-      "Linux Administration",
-      "SQL Databases",
-      "Network Infrastructure",
-    ],
+      "Four-year technical programme (Administration and Programming): Linux/Windows system administration, networking, relational database design with SQL, and web development fundamentals.",
   },
 ];
 
@@ -49,52 +42,54 @@ export default function AboutMe() {
         <section className="lg:col-span-2 space-y-10">
           <article className="bg-card border border-border-color rounded-2xl p-8 md:p-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 tracking-tight text-balance text-(--text-primary)">
-              Logic, Structure, Design.
+              A few words about me
             </h2>
             <p className="text-[1.0625rem] md:text-lg text-(--text-secondary) leading-[1.7] text-pretty">
-              I am a software engineer specializing in backend development,{" "}
+              I am a Computer Science student at the University of Gdańsk,
+              focused on backend engineering with{" "}
               <span className="font-semibold text-(--text-primary)">
-                programming since 2021
+                Java and Spring Boot
               </span>
-              . I am dedicated to delivering clean, testable, and highly
-              efficient server-side solutions. My approach combines a strong
-              analytical foundation from my computer science studies with
-              hands-on expertise in solving complex problems and understanding
-              how{" "}
+              . I care about writing well-tested, maintainable code I&apos;d be
+              comfortable handing off to someone else: I write critical logic{" "}
               <span className="font-semibold text-(--text-primary)">
-                software architecture and infrastructure
+                test-first
               </span>{" "}
-              work together.
+              and record architectural decisions as{" "}
+              <span className="font-semibold text-(--text-primary)">ADRs</span>.
             </p>
 
             <p className="text-[1.0625rem] md:text-lg text-(--text-secondary) leading-[1.7] mt-4 text-pretty">
-              My drive is to tackle backend challenges with engineering
-              precision, prioritizing data consistency and practical
-              functionality. I treat every project with professional discipline
-              — ensuring solid test coverage, automated CI/CD pipelines, and
-              secure API designs while looking for an opportunity to contribute
-              to a production environment.
+              I am looking for a Java Backend Developer or Software Engineering
+              internship – available{" "}
+              <span className="font-semibold text-(--text-primary)">
+                now, part-time
+              </span>{" "}
+              alongside my studies – or a full-time junior role starting{" "}
+              <span className="font-semibold text-(--text-primary)">
+                January 2027
+              </span>
+              .
             </p>
           </article>
 
-          {/* REORDERED & CLEANED UP TOOLKIT (12 ITEMS PERFECT FOR THE GRID) */}
           <article>
             <h3 className="text-xl md:text-2xl font-bold mb-6 tracking-tight text-(--text-primary)">
               Professional Toolkit
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
               {[
-                "Java / Spring Boot",
+                "Java 21+",
+                "Spring Boot 3+ / JPA",
+                "Spring Security (JWT)",
                 "PostgreSQL",
-                "Docker",
+                "Redis",
+                "Liquibase / Flyway",
                 "Testcontainers",
-                "GitHub Actions",
-                "Apache Kafka",
-                "Cloud (Azure/AWS)",
+                "JUnit 5 / Mockito",
+                "Docker",
+                "GitHub Actions CI/CD",
                 "MongoDB",
-                "C# / .NET Core",
-                "Go (Golang)",
-                "Node.js / Express",
                 "Git",
               ].map((skill) => (
                 <div
@@ -107,17 +102,19 @@ export default function AboutMe() {
                 </div>
               ))}
             </div>
+            <p className="mt-6 text-base text-(--text-secondary)">
+              Also exploring: React, Node.js / Express, AWS / Azure.
+            </p>
           </article>
         </section>
 
-        {/* RIGHT COLUMN: Timeline / History (1/3 width) */}
         <section className="lg:col-span-1">
           <h3 className="text-xl md:text-2xl font-bold mb-6 tracking-tight text-(--text-primary)">
-            My Journey
+            Education
           </h3>
           <div className="relative border-l-2 border-border-color ml-4">
-            {timelineEvents.map((event, index) => (
-              <div key={index} className="mb-8 pl-6 relative">
+            {timelineEvents.map((event) => (
+              <div key={event.title} className="mb-8 pl-6 relative">
                 {/* Timeline Dot (Accent Color) */}
                 <div className="absolute w-4 h-4 rounded-full bg-accent -left-2 top-1.5 border-4 border-main"></div>
 
@@ -130,27 +127,8 @@ export default function AboutMe() {
                 <p className="text-base text-(--text-secondary) leading-relaxed mb-3">
                   {event.description}
                 </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {event.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs font-medium px-3 py-1 rounded-full bg-[#2a2a2a] text-(--text-secondary) border border-[#333]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
             ))}
-
-            {/* Final Timeline Event Placeholder */}
-            <div className="mb-8 pl-6 relative">
-              <div className="absolute w-4 h-4 rounded-full bg-accent -left-2 top-1.5 border-4 border-main opacity-50"></div>
-              <p className="text-sm text-(--text-secondary) italic mt-6">
-                ...and beyond
-              </p>
-            </div>
           </div>
         </section>
       </main>
