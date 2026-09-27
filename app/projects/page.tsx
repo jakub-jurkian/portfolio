@@ -67,14 +67,13 @@ const projects = [
   {
     title: "Smart Home Simulator (IoT)",
     description:
-      "IoT platform that simulates smart-home hardware talking to an ASP.NET Core (.NET 10) backend over TCP and MQTT, with real-time dashboard updates via SignalR and persistence through Entity Framework Core. Deployed to Azure Container Apps, Static Web Apps and Azure SQL, with the whole environment defined in a Bicep template. 83 xUnit tests (unit, integration and Reqnroll BDD) run in the GitHub Actions pipeline before deployment.",
+      "IoT platform that simulates smart-home hardware talking to an ASP.NET Core (.NET 10) backend over TCP and MQTT, with real-time dashboard updates via SignalR and persistence through Entity Framework Core. 83 xUnit tests (unit, integration and Reqnroll BDD) run in the GitHub Actions pipeline.",
     stack: [
       "C#",
       ".NET 10",
       "EF Core",
       "MQTT",
       "SignalR",
-      "Azure",
       "Docker",
       "xUnit",
     ],
