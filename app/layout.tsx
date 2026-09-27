@@ -9,7 +9,7 @@ const description =
 export const metadata: Metadata = {
   metadataBase: new URL("https://jakub-jurkian-portfolio.vercel.app"),
   title: {
-    default: "Jakub Jurkian | Java Backend Developer",
+    default: "Jakub Jurkian | Backend Developer",
     template: "%s | Jakub Jurkian",
   },
   description,

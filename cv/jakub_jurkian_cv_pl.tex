@@ -1,0 +1,149 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[normalem]{ulem}
+\usepackage{contour}
+\renewcommand{\ULdepth}{3.4pt}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[polish]{babel}
+\usepackage{tabularx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{ragged2e}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.75in}
+\addtolength{\textheight}{1.5in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\definecolor{TechBlue}{HTML}{1A4B84}
+\definecolor{LightGray}{HTML}{7A7A7A}
+
+\titleformat{\section}{
+  \vspace{-2pt}\scshape\raggedright\large\color{TechBlue}
+}{}{0em}{}[\color{TechBlue}\titlerule \vspace{2pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{0pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-2pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{0pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-3pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, topsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{0pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=1pt, parsep=0pt, partopsep=0pt, topsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Jakub Jurkian} \\ \vspace{3pt}
+    {\large \color{TechBlue} Java Backend Developer} \\ \vspace{3pt}
+    Gdańsk, Polska \\ \vspace{2pt}
+    \small
+    \href{mailto:kuba.jur03@gmail.com}{\uline{kuba.jur03@gmail.com}} $|$
+    +48 724 856 514 $|$
+    \href{https://linkedin.com/in/jakub-jurkian}{\uline{LinkedIn}} $|$
+    \href{https://github.com/jakub-jurkian}{\uline{Github}}
+\end{center}
+
+\section{O mnie}
+{\justifying \small Student informatyki na Uniwersytecie Gdańskim, tworzący systemy backendowe w technologiach \textbf{Java} i \textbf{Spring Boot}. Przykładam dużą wagę do dobrze przetestowanego kodu, który można bez obaw przekazać innemu programiście: kluczową logikę piszę w podejściu test-first, a decyzje architektoniczne dokumentuję w ADR-ach. Szukam stażu jako Java Backend Developer lub Software Engineer - dostępny \textbf{od zaraz} w niepełnym wymiarze - lub pracy jako Junior (pełen etat) od \textbf{stycznia 2027 r.}\par}
+
+\section{Umiejętności techniczne}
+ \begin{itemize}[leftmargin=0.15in, label={}, topsep=0pt]
+    \small{\item{
+     \textbf{Języki}{: \textbf{Java 21+}, SQL, Python, TypeScript} \\
+     \textbf{Frameworki i testowanie}{: \textbf{Spring Boot 3+}, Spring Security, Hibernate/JPA, Testcontainers, JUnit 5, Mockito} \\
+     \textbf{Infrastruktura i bazy danych}{: \textbf{PostgreSQL}, Redis, Liquibase, Docker, GitHub Actions CI/CD, MongoDB} \\
+     \textbf{Architektura i metodyki}{: RESTful API, TDD, Architecture Decision Records (ADR), Git, praca oparta na GitHub Issues i PR-ach} \\
+     \textbf{Dodatkowo eksploruję}{: React, Node.js/Express}
+    }}
+ \end{itemize}
+
+\section{Projekty}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {Fleet Management API (VeloCity) $|$ \emph{Java 25, Spring Boot 4, PostgreSQL} $|$ \href{https://github.com/jakub-jurkian/velocity-api}{\underline{GitHub}} $|$ \href{https://velocityfleet.dev}{\underline{Demo}}}
+          {2026}
+          \resumeItemListStart
+        \resumeItem{Zbudowałem REST API w Spring Boot (z osobnym klientem React/TypeScript) dla wypożyczalni rowerów elektrycznych, zabezpieczone bezstanowym łańcuchem filtrów JWT i blacklistą tokenów w Redis przy wylogowaniu.}
+        \resumeItem{Wyeliminowałem double-booking na poziomie bazy danych dzięki PostgreSQL exclusion constraint (GiST na zakresach dat) mapowanemu na HTTP 409; potwierdza to test współbieżności (Testcontainers).}
+        \resumeItem{Cykl życia rezerwacji zamodelowałem jako maszynę stanów w warstwie domeny z optimistic locking (@Version) chroniącym przed utratą aktualizacji; schematem bazy zarządzają migracje Liquibase.}
+        \resumeItem{Silnik wyceny (BigDecimal) napisałem w podejściu TDD. Ponad 40 testów jednostkowych i integracyjnych działa w GitHub Actions, a osobny workflow wdraża obraz Dockera na maszynę wirtualną w Oracle Cloud.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {LLM Evaluation API (MockBean) $|$ \emph{Java 21, Spring Boot 3, LangChain4j, pgvector} $|$ \href{https://github.com/jakub-jurkian/mockbean}{\underline{GitHub}}}
+          {2026}
+          \resumeItemListStart
+            \resumeItem{Zbudowałem API w Spring Boot oceniające odpowiedzi z rozmów technicznych (LLM-as-a-judge) w trybie RAG (pgvector) lub czystego promptu; model (Claude, Gemini, lokalna Llama 3.1) wybiera profil Springa.}
+            \resumeItem{Przeprowadziłem benchmark 3 modeli $\times$ 2 trybów na 40 oznaczonych odpowiedziach z przedziałami ufności bootstrap (Python): Claude osiągnął 92,5\% trafności, a RAG nie poprawił wyników żadnego z modeli.}
+            \resumeItem{Wdrożyłem migracje schematu bazy danych we Flyway (zamiast Hibernate auto-DDL). System zapisuje każdą ocenę w celu późniejszej analizy spójności modeli.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {E-Commerce Marketplace API (Grailkits) $|$ \emph{Express.js, Keycloak, PostgreSQL/MongoDB} $|$ \href{https://github.com/jakub-jurkian/grailkits}{\underline{GitHub}}}
+          {2026}
+          \resumeItemListStart
+            \resumeItem{Podzieliłem backend platformy e-commerce na cztery niezależne serwisy (API Gateway, Catalog, Order, Review) i osobno skonteneryzowałem każdy z nich.}
+            \resumeItem{Zabezpieczyłem architekturę przy użyciu Keycloak (OAuth 2.0 + PKCE). API Gateway odpowiada za walidację tokenów JWT oraz rate-limiting oparty na Redis, zanim ruch trafi do usług docelowych.}
+            \resumeItem{Wykorzystałem bazę PostgreSQL do obsługi zamówień oraz MongoDB do przechowywania szczegółów produktów i opinii (elastyczny schemat danych).}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+\section{Edukacja}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Uniwersytet Gdański}{Gdańsk, Polska}
+      {Informatyka, studia stacjonarne (I stopnia)}{2024 - obecnie}
+      \resumeItemListStart
+        \resumeItem{\textbf{Wybrane przedmioty:} Algorytmy i struktury danych, Aplikacje przemysłowe, Bazy danych, Programowanie współbieżne, Bezpieczeństwo aplikacji webowych, Architektura mikroserwisów.}
+        \resumeItem{\vspace{4pt}\textbf{Obowiązkowe praktyki zawodowe:} Szósty semestr (od stycznia 2027 r.) jest w całości przeznaczony na praktyki zawodowe (720 godzin) bez zajęć dydaktycznych, co gwarantuje moją pełną dyspozycyjność.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Zespół Szkół im. Macieja Rataja}{Reszel, Polska}
+      {Technik informatyk (specjalizacja: administracja i programowanie)}{2019 - 2023}
+  \resumeSubHeadingListEnd
+
+\section{Języki}
+ \begin{itemize}[leftmargin=0.15in, label={}, topsep=0pt]
+    \small{\item{
+     \textbf{Angielski}{: B2+ -- codzienny język pracy z dokumentacją techniczną, kodem i komunikacją.} \\
+     \textbf{Polski}{: ojczysty.}
+    }}
+ \end{itemize}
+
+\vfill
+\begin{center}
+  \tiny \color{LightGray} Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO).
+\end{center}
+
+\end{document}
