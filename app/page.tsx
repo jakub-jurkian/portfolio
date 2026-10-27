@@ -34,7 +34,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
             <a
-              href="/jakub_jurkian_cv_eng.pdf"
+              href="/jakub_jurkian_cv_en.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 md:flex-none justify-center items-center text-center bg-accent text-main px-8 py-3 rounded-lg font-semibold text-base transition-all duration-200 hover:bg-[#fde047] hover:-translate-y-1 shadow-sm"
